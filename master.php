@@ -11,6 +11,7 @@ class master {
     }
 
     static function navbar() { 
+        $query = isset($_GET['query']) ? $_GET['query'] : '';
         echo ('<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.php"><img src ="logo/logo.png" height="30px"/></a>
@@ -42,13 +43,13 @@ class master {
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-danger" type="submit">Search</button>
+            <form method="GET" role="search" class="d-flex" action="sanity.php">
+              <input class="form-control me-2" type="text" name="query" placeholder="Search" aria-label="Search">
+              <input class="btn btn-outline-danger" type="submit" value="Search" >
             </form>
           </div>
         </div>
-      </nav>');
+      </nav>');  
     }
 
     static function navbar3 () {
